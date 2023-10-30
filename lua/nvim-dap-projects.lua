@@ -20,8 +20,6 @@ function M.search_project_config()
         return
     end
     vim.notify("[nvim-dap-projects] Found nvim-dap configuration at." .. project_config, vim.log.levels.INFO, nil)
-    require('dap').adapters = (function() return {} end)()
-    require('dap').configurations = (function() return {} end)()
     vim.cmd(":luafile " .. project_config)
 end
 
